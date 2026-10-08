@@ -49,3 +49,29 @@ La version suivante pour :
 - une correction de bug mineur : 1.0.1
 - une nouvelle fonctionnalité compatible : 1.1.0
 - une refonte majeure incompatible : 2.0.0
+
+## Mission 13 : fichiers à ignorer
+
+J'ai créé un fichier .gitignore avec les lignes debug.log, cache/ et .env. Ce fichier est commité pour que la règle soit dans le projet. J'ai vérifié avec git status (seul .gitignore apparaît) et avec git check-ignore -v.
+
+## Questions finales
+
+1. La zone de travail c'est mes fichiers sur mon disque, ceux que je modifie. La zone de staging c'est ce que je prépare pour le prochain commit avec git add. L'historique c'est l'ensemble des commits déjà enregistrés dans le dépôt.
+
+2. C'est mieux de travailler sur une branche dédiée pour ne pas casser la branche principale pendant que la fonctionnalité n'est pas finie. On peut aussi travailler à plusieurs en même temps, et si la fonctionnalité est abandonnée on supprime juste la branche.
+
+3. Avec git reset (mission 8) on supprime le commit de l'historique, donc ça doit se faire seulement sur un commit pas encore partagé. Avec git revert (mission 9) on ajoute un nouveau commit qui annule l'ancien, l'historique n'est pas modifié, donc c'est sûr pour un commit que les autres ont déjà.
+
+4. C'est utile quand j'ai un travail pas fini et que je dois changer de branche ou faire une correction urgente, sans faire un commit à moitié fini. Je mets de côté avec git stash et je récupère ensuite avec git stash pop.
+
+5. Parce qu'une fusion complète récupère tous les commits de la branche, y compris ceux qu'on ne veut pas (tests, travail pas fini). Avec cherry-pick on prend seulement le commit voulu.
+
+6. HEAD c'est un pointeur qui indique où je suis dans le dépôt, en général le dernier commit de la branche sur laquelle je travaille.
+
+7. HEAD~2 c'est le commit qui se trouve 2 commits avant le commit actuel (HEAD).
+
+8. Un tag sert à mettre une étiquette sur un commit précis, par exemple pour marquer une version comme v1.0.0 et la retrouver facilement.
+
+9. Des petits commits précis sont plus faciles à lire et à comprendre. Si il y a un bug on retrouve plus vite d'où il vient, et on peut annuler ou récupérer un seul changement sans toucher au reste.
+
+10. Certains fichiers ne doivent pas être versionnés car ils contiennent des infos secrètes (comme .env avec des mots de passe) ou ils sont générés automatiquement (logs, cache). Ça alourdit le dépôt pour rien et ça peut créer des conflits ou des failles de sécurité.
