@@ -35,3 +35,17 @@ J'ai utilisé la commande git cherry-pick 42844c1 depuis la branche main. Cette 
 L'identifiant du commit d'origine (sur la branche test) est 42844c1. Une fois copié sur main, il a un nouvel identifiant : 48d44d2, parce que c'est une copie, pas le même commit.
 
 Une fusion classique (git merge test) n'était pas adaptée parce qu'elle aurait pris tous les commits de la branche test. Il y aurait eu aussi le test des couleurs et le texte de test dans le footer, et je ne voulais pas les mettre sur main. Je voulais juste la correction de la faute.
+
+## Mission 12 : version stable
+
+J'ai créé la version avec git tag -a v1.0.0 -m "Première version stable de NovaTech" sur le dernier commit de main, puis j'ai affiché les infos avec git show v1.0.0.
+
+Les trois nombres de 1.0.0 :
+- Le premier (1) c'est MAJOR : il change quand il y a un changement qui n'est plus compatible avec les anciennes versions.
+- Le deuxième (0) c'est MINOR : il change quand on ajoute une nouvelle fonctionnalité compatible.
+- Le troisième (0) c'est PATCH : il change quand on corrige un bug sans rien changer d'autre.
+
+La version suivante pour :
+- une correction de bug mineur : 1.0.1
+- une nouvelle fonctionnalité compatible : 1.1.0
+- une refonte majeure incompatible : 2.0.0
