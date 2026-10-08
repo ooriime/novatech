@@ -27,3 +27,11 @@ Après le reset, j'ai enlevé la règle incorrecte de style.css avec git restore
 Pour annuler le commit Ajout promotion j'ai utilisé git revert HEAD. Cette commande crée un nouveau commit qui fait l'inverse du commit d'avant. Le commit Ajout promotion reste dans l'historique, on voit juste qu'il a été annulé après.
 
 La méthode est différente de la mission 8 parce que là le commit avait déjà été récupéré par les autres membres de l'équipe. Si j'avais fait un reset, j'aurais supprimé le commit de mon côté, mais les autres l'auraient toujours et leur historique ne correspondrait plus au mien, ça ferait des problèmes. Avec revert j'ajoute juste un commit en plus, donc personne n'est perdu. Le reset on peut l'utiliser seulement quand le commit n'a été partagé avec personne, comme à la mission 8.
+
+## Mission 11 : récupérer un seul commit
+
+J'ai utilisé la commande git cherry-pick 42844c1 depuis la branche main. Cette commande copie un seul commit d'une autre branche sur la branche où je suis.
+
+L'identifiant du commit d'origine (sur la branche test) est 42844c1. Une fois copié sur main, il a un nouvel identifiant : 48d44d2, parce que c'est une copie, pas le même commit.
+
+Une fusion classique (git merge test) n'était pas adaptée parce qu'elle aurait pris tous les commits de la branche test. Il y aurait eu aussi le test des couleurs et le texte de test dans le footer, et je ne voulais pas les mettre sur main. Je voulais juste la correction de la faute.
