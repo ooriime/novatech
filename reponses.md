@@ -6,7 +6,7 @@
 
 2. Le commit qui ajoute la page Contact c'est cb4aaf7, c'est là que j'ai créé contact.html. Ensuite j'ai fait un deuxième commit (4af2978) pour les champs obligatoires, et le commit a3fa1e2 c'est la fusion dans main.
 
-3. Pour l'instant il y a 11 commits. Je les ai comptés avec git rev-list --count HEAD. Les commits de fusion sont comptés aussi.
+3. A la fin du TP il y a 26 commits sur main, il y en avait 11 au moment de la mission 5. Je les ai comptés avec git rev-list --count HEAD. Les commits de fusion sont comptés aussi.
 
 4. Pour voir l'historique en graphique j'ai utilisé : git log --oneline --graph --decorate --all
 
@@ -38,7 +38,7 @@ Une fusion classique (git merge test) n'était pas adaptée parce qu'elle aurait
 
 ## Mission 12 : version stable
 
-J'ai créé la version avec git tag -a v1.0.0 -m "Première version stable de NovaTech" sur le dernier commit de main, puis j'ai affiché les infos avec git show v1.0.0.
+J'ai créé la version avec git tag -a v1.0.0 -m "Première version stable de NovaTech" sur le commit fbc1a84 (le dernier commit de main à ce moment-là), puis j'ai affiché les infos avec git show v1.0.0.
 
 Les trois nombres de 1.0.0 :
 - Le premier (1) c'est MAJOR : il change quand il y a un changement qui n'est plus compatible avec les anciennes versions.
