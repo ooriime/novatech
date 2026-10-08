@@ -21,3 +21,9 @@ Les modifications sont toujours là parce que --soft ne change que le pointeur d
 Pour supprimer aussi les modifications du fichier, il aurait fallu faire git reset --hard HEAD~1. Là tout est effacé, le commit et les changements dans le fichier.
 
 Après le reset, j'ai enlevé la règle incorrecte de style.css avec git restore.
+
+## Mission 9 : commit partagé à annuler
+
+Pour annuler le commit Ajout promotion j'ai utilisé git revert HEAD. Cette commande crée un nouveau commit qui fait l'inverse du commit d'avant. Le commit Ajout promotion reste dans l'historique, on voit juste qu'il a été annulé après.
+
+La méthode est différente de la mission 8 parce que là le commit avait déjà été récupéré par les autres membres de l'équipe. Si j'avais fait un reset, j'aurais supprimé le commit de mon côté, mais les autres l'auraient toujours et leur historique ne correspondrait plus au mien, ça ferait des problèmes. Avec revert j'ajoute juste un commit en plus, donc personne n'est perdu. Le reset on peut l'utiliser seulement quand le commit n'a été partagé avec personne, comme à la mission 8.
